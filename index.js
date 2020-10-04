@@ -16,7 +16,7 @@ for(const file of commandFiles){
 
     client.commands.set(command.name, command);
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
 client.once('ready', () => {
     console.log('vittu toimii trueeee!')
 });
@@ -79,6 +79,7 @@ client.on('message', async message => {
         } else {
           message.reply('et ole vittu kanavalla istu alas fädäri');
         }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
 }});
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -123,9 +124,11 @@ client.on('message', message =>{
 
     } else if (command == 'truth'){
         client.commands.get('truth').execute(message, args);
-    }
-
+    } else if (command == 'github'){
+        message.reply('https://github.com/SteelForce/yeptonttu')
+    }    
 });
 client.login(config.token);
 //temp   'C:/Users/nooao/Desktop/yep/Armin van Buuren - Turn it Up (Hardstyle Remix) FREE DOWNLOAD.mp3'
 //vittu mä olen feikker
+//kapp
