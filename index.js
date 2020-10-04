@@ -57,6 +57,28 @@ client.on('message', async message => {
         } else {
           message.reply('et ole vittu kanavalla istu alas fädäri');
         }
+      } else if (message.content === '!kiitti') {
+        if (message.member.voice.channel) {
+          const connection = await message.member.voice.channel.join();
+          const dispatcher = connection.play('C:/Users/nooao/Desktop/yep/kiitti_looteist_.mp3');
+          dispatcher.on()('finish', () => {
+              console.log('Finished playing!');
+              dispatcher.destroy();
+          })
+        } else {
+          message.reply('et ole vittu kanavalla istu alas fädäri');
+        }
+      } else if (message.content === '!21') {
+        if (message.member.voice.channel) {
+          const connection = await message.member.voice.channel.join();
+          const dispatcher = connection.play(ytdl('https://www.youtube.com/watch?v=7_5ZFyMwURk', { filter: 'audioonly' }));
+          dispatcher.on()('finish', () => {
+              console.log('Finished playing!');
+              dispatcher.destroy();
+          })
+        } else {
+          message.reply('et ole vittu kanavalla istu alas fädäri');
+        }
 }});
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
