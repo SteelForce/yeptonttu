@@ -18,7 +18,7 @@ for(const file of commandFiles){
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
 client.once('ready', () => {
-    console.log('vittu toimii trueeee!')
+    console.log('toimii trueeee!')
 });
 
 client.on('message', async message => {
@@ -26,6 +26,7 @@ client.on('message', async message => {
   
     if (message.content === '!1v9') {
       if (message.member.voice.channel) {
+        console.log('playing 1v9')
         const connection = await message.member.voice.channel.join();
         const dispatcher = connection.play('C:/Users/nooao/Desktop/yep/Armin van Buuren - Turn it Up (Hardstyle Remix) FREE DOWNLOAD.mp3');
         dispatcher.on()('finish', () => {
@@ -79,6 +80,17 @@ client.on('message', async message => {
         } else {
           message.reply('et ole vittu kanavalla istu alas fädäri');
         }
+      } else if (message.content === '!minäirl') {
+          if (message.member.voice.channel) {
+            const connection = await message.member.voice.channel.join();
+            const dispatcher = connection.play(ytdl('https://www.youtube.com/watch?v=Zmy6U2sF6Co', { filter: 'audioonly' }));
+            dispatcher.on()('finish', () => {
+                console.log('Finished playing!');
+                dispatcher.destroy();
+            })
+          } else {
+            message.reply('et ole vittu kanavalla istu alas fädäri');
+          }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
 }});
 client.on('message', message =>{
