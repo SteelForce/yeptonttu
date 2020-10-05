@@ -131,11 +131,13 @@ client.on('message', message =>{
 
     } else if (command == 'tonttuhelp'){
         client.commands.get('tonttuhelp').execute(message, args);
+        
     } else if (command == 'dece'){
         message.member.voice.channel.leave()
 
     } else if (command == 'truth'){
         client.commands.get('truth').execute(message, args);
+
     } else if (command == 'github'){
         message.reply('https://github.com/SteelForce/yeptonttu')
     }    
